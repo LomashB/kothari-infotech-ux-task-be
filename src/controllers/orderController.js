@@ -18,7 +18,6 @@ exports.getOrders = async (req, res) => {
   try {
     const orders = await Order.find();
     res.json(orders);
-    console.log('first')
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

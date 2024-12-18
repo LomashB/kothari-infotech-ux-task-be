@@ -5,23 +5,23 @@ const { initWebSocketServer } = require('./websocket/socketServer');
 
 const app = express();
 const cors = require('cors');
-const http = require('http'); // Ensure this line is correct
+const http = require('http');
 
 // Connect to MongoDB
 connectDB();
-app.use(cors()); // Enable CORS for all routes
+app.use(cors()); // Enable CORS 
 
-// Middleware
+// Middleware 
 app.use(express.json());
 
-// Routes
+// routes
 app.use('/api', orderRoutes);
 
-const server = http.createServer(app); // This should work now
+const server = http.createServer(app); 
 
 initWebSocketServer(server);
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => { // Use server instead of http
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

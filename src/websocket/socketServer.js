@@ -3,7 +3,6 @@ const Order = require('../models/Order');
 
 let wss;
 
-// Initialize WebSocket server
 exports.initWebSocketServer = (server) => {
   if (wss) {
     console.warn('WebSocket server is already initialized.');
@@ -15,7 +14,6 @@ exports.initWebSocketServer = (server) => {
   wss.on('connection', async (ws) => {
     console.log('A user connected.');
 
-    // Send initial orders to the connected client
     try {
       const orders = await Order.find({});
       if (orders.length > 0) {

@@ -1,7 +1,7 @@
 {
   "name": "kothari-infotech-ux-task-be",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for Kothari Infotech UX Task",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
